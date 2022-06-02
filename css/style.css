@@ -5,7 +5,24 @@ h2{
     text-align: center;
 }
 body{
-    background-image: url("../images/pokedex-wallpaper.png");
-    background-size: cover ;
-    background-color:bisque;
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+font-family: 'Saira Condensed', sans-serif;
+}
+.bordesRedondeados{
+    border: 1px solid black;
+    border-radius: 20px;
+}
+.colorTexto{
+    color: black;
+    
+}
+.colorTitulo{
+    color:black;
+}
+.bannerTitulo{
+    background-image: url(../images/pokedex-wallpaper.png);
+    background-size: cover;
+}
+.fondoCard{
+    background-color:#1B4F72;
 }
