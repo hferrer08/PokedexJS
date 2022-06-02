@@ -1,0 +1,11 @@
+h1{
+    text-align: center;
+}
+h2{
+    text-align: center;
+}
+body{
+    background-image: url("../images/pokedex-wallpaper.png");
+    background-size: cover ;
+    background-color:bisque;
+}
