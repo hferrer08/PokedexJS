@@ -26,3 +26,8 @@ font-family: 'Saira Condensed', sans-serif;
 .fondoCard{
     background-color:#1B4F72;
 }
+
+
+#contenedorCards{
+    text-align: center;
+}

@@ -2,12 +2,13 @@
 
 class Pokemon{
 
-constructor(numeroPokedex,nombre, tipo, ataque, generacion){
+constructor(numeroPokedex,nombre, tipo, ataque, generacion, image){
 this.nombre=nombre;
 this.tipo=tipo;
 this.ataque=ataque;
 this.numeroPokedex=numeroPokedex;
 this.generacion=generacion;
+this.image=image;
 }
 
 //Metodo para que la pokedex de los datos del pokemon encontrado
@@ -21,16 +22,16 @@ identificar(){alert(this.nombre + ", pokemon tipo "+this.tipo+", su ataque mas p
 
 //Creacion de objetos
 
-const pokemon1 = new Pokemon(1,"bulbasaur","planta","hoja afilada",1)
-const pokemon2 = new Pokemon(2,"ivysaur","planta","hoja afilada",1)
-const pokemon3 = new Pokemon(3,"venusaur","planta","rayo solar",1)
-const pokemon4 = new Pokemon(4,"charmander","fuego","ascuas",1)
-const pokemon5 = new Pokemon(5,"charmeleon","fuego","ascuas",1)
-const pokemon6 = new Pokemon(6,"charizard","fuego","lanzallamas",1)
-const pokemon7 = new Pokemon(7,"squirtle","agua","burbujas",1)
-const pokemon8 = new Pokemon(8,"wartortle","agua","burbujas",1)
-const pokemon9 = new Pokemon(9,"blastoise","agua","hidrobomba",1)
-const pokemon10 = new Pokemon(10,"caterpie","bicho","placaje",1)
+const pokemon1 = new Pokemon(1,"bulbasaur","planta","hoja afilada",1,'../images/bulbasaur.png')
+const pokemon2 = new Pokemon(2,"ivysaur","planta","hoja afilada",1,'../images/ivysaur.png')
+const pokemon3 = new Pokemon(3,"venusaur","planta","rayo solar",1,'../images/venusaur.png')
+const pokemon4 = new Pokemon(4,"charmander","fuego","ascuas",1,'../images/charmander.png')
+const pokemon5 = new Pokemon(5,"charmeleon","fuego","ascuas",1,'../images/charmeleon.png')
+const pokemon6 = new Pokemon(6,"charizard","fuego","lanzallamas",1,'../images/charizard.png')
+const pokemon7 = new Pokemon(7,"squirtle","agua","burbujas",1,'../images/squirtle.png')
+const pokemon8 = new Pokemon(8,"wartortle","agua","burbujas",1,'../images/wartortle.png')
+const pokemon9 = new Pokemon(9,"blastoise","agua","hidrobomba",1,'../images/blastoise.png')
+const pokemon10 = new Pokemon(10,"caterpie","bicho","placaje",1,'../images/caterpie.png')
 
 
 //Crear la array con los pokemons
@@ -91,10 +92,26 @@ if(existeTipo == true){
     alert("Aun no has encontrado un pokemon de este tipo")
 }
 
+//AplicarInnerHTML - DOM
+console.log(document)
+const contenedorCards = document.getElementById('contenedorCards')
 
 
+listaPokedex.forEach((pokemon) => {
+    let contenedor = document.createElement("div")
+contenedor.className = "col-md-4 bordesRedondeados m-1 fondoCard"
+contenedor.innerHTML = ` 
 
 
+<div class="text-center"><img src="${pokemon.image}" class="img-fluid text-center"></div>
+<h3 class="colorTexto text-center">${pokemon.nombre}</h3>
+<p class="colorTexto">Pokemon tipo ${pokemon.tipo}, de ${pokemon.generacion} generación, su ataque mas poderoso es ${pokemon.ataque}</p>
+</div>
+
+
+`
+contenedorCards.append(contenedor);
+})
 
 
 
