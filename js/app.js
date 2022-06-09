@@ -38,7 +38,7 @@ const pokemon10 = new Pokemon(10,"caterpie","bicho","placaje",1,'https://assets.
 const listaPokedex = [pokemon1,pokemon2,pokemon3,pokemon4,pokemon5,pokemon6,pokemon7,pokemon8,pokemon9,pokemon10]
 
 
-let pokemonConocido = prompt("Digita el nombre del pokemon para verificar si ya esta registrado en pokedex: ").toLowerCase()
+/* let pokemonConocido = prompt("Digita el nombre del pokemon para verificar si ya esta registrado en pokedex: ").toLowerCase()
 
 //Verificar existencia en pokedex
 const existe = listaPokedex.some(pokemon => pokemon.nombre === pokemonConocido)
@@ -90,10 +90,10 @@ if(existeTipo == true){
     console.log(busquedaPorTipo)
 }else{
     alert("Aun no has encontrado un pokemon de este tipo")
-}
+} */
 
-//AplicarInnerHTML - DOM
-console.log(document)
+ //AplicarInnerHTML - DOM
+ console.log(document)
 const contenedorCards = document.getElementById('contenedorCards')
 
 
@@ -110,10 +110,149 @@ contenedor.innerHTML = `
 
 
 `
+
+
 contenedorCards.append(contenedor);
-})
+})  
+function respuestaClick(){
+    
+    //Leer documento
+    console.log(document)
+    //Leer contenedor de Cards y dejarlo en blanco
+        const contenedorCards = document.getElementById('contenedorCards')
+        contenedorCards.innerHTML = ""
+    //Si el usuario escoge todos los tipos imprimir toda la pokedex
+    if(seleccionTipo.value==='todos'){
+        console.log(document)
+        const contenedorCards = document.getElementById('contenedorCards')
+        
+        
+        listaPokedex.forEach((pokemon) => {
+            let contenedor = document.createElement("div")
+        contenedor.className = "col-md-4 bordesRedondeados m-1 fondoCard"
+        contenedor.innerHTML = ` 
+        
+        
+        <div class="text-center"><img src="${pokemon.image}" class="img-fluid text-center"></div>
+        <h3 class="colorTexto text-center">${pokemon.nombre}</h3>
+        <p class="colorTexto">Pokemon tipo ${pokemon.tipo}, de ${pokemon.generacion} generación, su ataque mas poderoso es ${pokemon.ataque}</p>
+        </div>
+        
+        
+        `
+        
+        
+        contenedorCards.append(contenedor);
+        }) 
 
+    }      
+    //Si es tipo agua agregar array busquedaPorTipo que filtra los tipo agua
+if(seleccionTipo.value==='agua'){
+    console.log('Tipo agua')
 
+    const busquedaPorTipo = listaPokedex.filter(pokemon => pokemon.tipo == seleccionTipo.value)
+    const contenedorCards = document.getElementById('contenedorCards')
+    
+    busquedaPorTipo.forEach((pokemon) => {
+        let contenedor = document.createElement("div")
+    contenedor.className = "col-md-4 bordesRedondeados m-1 fondoCard"
+    contenedor.innerHTML = ` 
+    
+    
+    <div class="text-center"><img src="${pokemon.image}" class="img-fluid text-center"></div>
+    <h3 class="colorTexto text-center">${pokemon.nombre}</h3>
+    <p class="colorTexto">Pokemon tipo ${pokemon.tipo}, de ${pokemon.generacion} generación, su ataque mas poderoso es ${pokemon.ataque}</p>
+    </div>
+    
+    
+    `
+    
+    
+    contenedorCards.append(contenedor);
+    })
+    
+
+}
+//Si es tipo fuego agregar array busquedaPorTipo que filtra los tipo fuego
+if(seleccionTipo.value==='fuego'){
+    console.log('Tipo fuego')
+    const busquedaPorTipo = listaPokedex.filter(pokemon => pokemon.tipo == seleccionTipo.value)
+    const contenedorCards = document.getElementById('contenedorCards')
+    
+    busquedaPorTipo.forEach((pokemon) => {
+        let contenedor = document.createElement("div")
+    contenedor.className = "col-md-4 bordesRedondeados m-1 fondoCard"
+    contenedor.innerHTML = ` 
+    
+    
+    <div class="text-center"><img src="${pokemon.image}" class="img-fluid text-center"></div>
+    <h3 class="colorTexto text-center">${pokemon.nombre}</h3>
+    <p class="colorTexto">Pokemon tipo ${pokemon.tipo}, de ${pokemon.generacion} generación, su ataque mas poderoso es ${pokemon.ataque}</p>
+    </div>
+    
+    
+    `
+    
+    
+    contenedorCards.append(contenedor);
+    })
+}
+//Si es tipo planta agregar array busquedaPorTipo que filtra los tipo planta
+if(seleccionTipo.value==='planta'){
+    console.log('Tipo planta')
+    const busquedaPorTipo = listaPokedex.filter(pokemon => pokemon.tipo == seleccionTipo.value)
+    const contenedorCards = document.getElementById('contenedorCards')
+    
+    busquedaPorTipo.forEach((pokemon) => {
+        let contenedor = document.createElement("div")
+    contenedor.className = "col-md-4 bordesRedondeados m-1 fondoCard"
+    contenedor.innerHTML = ` 
+    
+    
+    <div class="text-center"><img src="${pokemon.image}" class="img-fluid text-center"></div>
+    <h3 class="colorTexto text-center">${pokemon.nombre}</h3>
+    <p class="colorTexto">Pokemon tipo ${pokemon.tipo}, de ${pokemon.generacion} generación, su ataque mas poderoso es ${pokemon.ataque}</p>
+    </div>
+    
+    
+    `
+    
+    
+    contenedorCards.append(contenedor);
+    })
+}
+//Si es tipo bicho agregar array busquedaPorTipo que filtra los tipo bicho
+if(seleccionTipo.value==='bicho'){
+    console.log('Tipo bicho')
+    const busquedaPorTipo = listaPokedex.filter(pokemon => pokemon.tipo == seleccionTipo.value)
+    const contenedorCards = document.getElementById('contenedorCards')
+    
+    busquedaPorTipo.forEach((pokemon) => {
+        let contenedor = document.createElement("div")
+    contenedor.className = "col-md-4 bordesRedondeados m-1 fondoCard"
+    contenedor.innerHTML = ` 
+    
+    
+    <div class="text-center"><img src="${pokemon.image}" class="img-fluid text-center"></div>
+    <h3 class="colorTexto text-center">${pokemon.nombre}</h3>
+    <p class="colorTexto">Pokemon tipo ${pokemon.tipo}, de ${pokemon.generacion} generación, su ataque mas poderoso es ${pokemon.ataque}</p>
+    </div>
+    
+    
+    `
+    
+    
+    contenedorCards.append(contenedor);
+    })
+}
+    
+    
+  }
+
+let seleccionTipo = document.getElementById("pokemons")
+console.log(seleccionTipo)
+    seleccionTipo.addEventListener("change", respuestaClick)
+    
 
 
 
