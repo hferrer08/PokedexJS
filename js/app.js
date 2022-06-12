@@ -37,6 +37,10 @@
   //Crear la array con los pokemon
   const listaPokedex = [pokemon1,pokemon2,pokemon3,pokemon4,pokemon5,pokemon6,pokemon7,pokemon8,pokemon9,pokemon10,pokemon11,pokemon12,pokemon13,pokemon14,pokemon15,pokemon16,pokemon17,pokemon18,pokemon19]
 
+  //Crear array de Team
+
+  let teamPokemon = []
+
   console.log(listaPokedex)
 
      //AplicarInnerHTML - DOM
@@ -49,22 +53,90 @@
         
         
         listaPokedex.forEach((pokemon) => {
+            //Agregar cards
             let contenedor = document.createElement("div")
-        contenedor.className = "col-md-4 bordesRedondeados m-1 fondoCard"
+        contenedor.className = "col-md-4 bordesRedondeados m-1 "
         contenedor.innerHTML = ` 
         <div class="text-center"><img src="${pokemon.image}" class="img-fluid text-center"></div>
         <h3 class="colorTexto text-center">${pokemon.nombre}</h3>
         <p class="colorTexto">Pokemon tipo ${pokemon.tipo}, de ${pokemon.generacion} generación, su ataque mas poderoso es ${pokemon.ataque}</p>
         </div>
-        <button class="pokemonBoton"><span>Yo te elijo para mi team!</button>
+        
+        `
+        //Cambiar color de la card
+        contenedor.style.backgroundColor = pokemon.typeColor
+        //Agregar Pokemon
+        let botonPokemon = document.createElement("button")
+        botonPokemon.className = "botonPokemon"
+        //Data id para saber que pokemon es
+        botonPokemon.setAttribute('data-id', pokemon.numeroPokedex)
+        botonPokemon.innerHTML = ` 
+        Yo te elijo para mi team!
+        
         `
         
+        contenedor.append(botonPokemon)
         
         contenedorCards.append(contenedor);
+   
         })  
     }
 
     imprimirPokedex()
+    imprimirTeamPokemon()
+   
+    function imprimirTeamPokemon(){
+        
+
+
+        console.log(document)
+        
+       
+        teamPokemon= JSON.parse(localStorage.getItem('teamPokemon'))
+        const contenedorStripeTeam = document.getElementById
+        ('contenedorSpriteTeam')
+        contenedorStripeTeam.innerHTML=""
+        
+        teamPokemon.forEach((pokemon) => {
+            //Agregar cards
+            let contenedorSprite = document.createElement("div")
+        contenedorSprite.className = "col-md-3  m-1 "
+        contenedorSprite.innerHTML = ` 
+        <div class="text-center"><img src="${pokemon.sprite}" class="img-fluid text-center"></div>
+                
+        `
+        //Agregar Pokemon
+    
+        
+        contenedorStripeTeam.append(contenedorSprite);
+   
+        })  
+    }
+
+
+    //Imprimir team
+
+   /*  function imprimirTeamPokemon() {
+        contenedorSpriteTeam = ""
+        teamPokemon.forEach((pokemon) => {
+            //Agregar cards
+            const contenedorSpriteTeam = document.querySelector ("#contenedorSpriteTeam")
+            console.log(contenedorSpriteTeam)
+            let contenedorSprite = document.createElement("div")
+        contenedorSprite.className = "col-md-4 m-1 "
+        contenedorSprite.innerHTML = ` 
+        <div class="text-center"><img src="${pokemon.sprite}" class="img-fluid text-center"></div>
+        
+        `
+        //agregar sprite al team
+        
+        contenedorSpriteTeam.append(contenedorSprite);
+        
+        })
+    }
+ */
+    //funcion para la lista dropdown por tipo
+    
 
     function respuestaClick(){
         
@@ -96,7 +168,7 @@
         <h3 class="colorTexto text-center">${pokemon.nombre}</h3>
         <p class="colorTexto">Pokemon tipo ${pokemon.tipo}, de ${pokemon.generacion} generación, su ataque mas poderoso es ${pokemon.ataque}</p>
         </div>
-        <button class="pokemonBoton"> <span>Yo te elijo para mi team!</button>
+        
         
         
         `
@@ -123,7 +195,7 @@
         <h3 class="colorTexto text-center">${pokemon.nombre}</h3>
         <p class="colorTexto">Pokemon tipo ${pokemon.tipo}, de ${pokemon.generacion} generación, su ataque mas poderoso es ${pokemon.ataque}</p>
         </div>
-        <button class="pokemonBoton"><span>Yo te elijo para mi team!</button>
+       
         
         `
         
@@ -147,7 +219,7 @@
         <h3 class="colorTexto text-center">${pokemon.nombre}</h3>
         <p class="colorTexto">Pokemon tipo ${pokemon.tipo}, de ${pokemon.generacion} generación, su ataque mas poderoso es ${pokemon.ataque}</p>
         </div>
-        <button class="pokemonBoton"><span>Yo te elijo para mi team!</button>
+        
         
         `
         
@@ -171,7 +243,7 @@
         <h3 class="colorTexto text-center">${pokemon.nombre}</h3>
         <p class="colorTexto">Pokemon tipo ${pokemon.tipo}, de ${pokemon.generacion} generación, su ataque mas poderoso es ${pokemon.ataque}</p>
         </div>
-        <button class="pokemonBoton"><span>Yo te elijo para mi team!</button>
+        
         
         `
         
@@ -196,7 +268,7 @@
         <h3 class="colorTexto text-center">${pokemon.nombre}</h3>
         <p class="colorTexto">Pokemon tipo ${pokemon.tipo}, de ${pokemon.generacion} generación, su ataque mas poderoso es ${pokemon.ataque}</p>
         </div>
-        <button class="pokemonBoton"><span>Yo te elijo para mi team!</button>
+       /
         
         `
         
@@ -220,7 +292,7 @@
         <h3 class="colorTexto text-center">${pokemon.nombre}</h3>
         <p class="colorTexto">Pokemon tipo ${pokemon.tipo}, de ${pokemon.generacion} generación, su ataque mas poderoso es ${pokemon.ataque}</p>
         </div>
-        <button class="pokemonBoton"><span>Yo te elijo para mi team!</button>
+       
         
         `
         
@@ -239,22 +311,39 @@
 
   //Funcion para agregar Pokemon al team
 
-function agregarPokemonATeam(){console.log("Agregaste un pokemon al team")}
+const agregarPokemonATeam = (e) => {
+    e.preventDefault()
+const pokemonNumeroPokedexSeleccionado = e.target.getAttribute('data-id')
+console.log(pokemonNumeroPokedexSeleccionado)
+const busquedaPorNoPokedex = listaPokedex.find(pokemon => pokemon.numeroPokedex == pokemonNumeroPokedexSeleccionado)
+console.log(busquedaPorNoPokedex)
+if(teamPokemon.length<6){
+teamPokemon.push(busquedaPorNoPokedex)
+}else{
+    alert("Máximo 6 pokemon por equipo")
+}
+console.log(teamPokemon)
+
+let teamEnJSON = JSON.stringify(teamPokemon)
+localStorage.setItem('teamPokemon',teamEnJSON)
+
+imprimirTeamPokemon()
+
+
+
+} 
 
  
 //Agregar evento a los botones
 
-let botonPokemon = document.querySelectorAll(".pokemonBoton")
+let botonPokemon = document.querySelectorAll(".botonPokemon")
+
+
 botonPokemon.forEach((boton) =>{
     boton.addEventListener("click",agregarPokemonATeam)
+   
+    
 })
 
 
 
-    
-    
-    
-    
-    
-    
- 
