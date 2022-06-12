@@ -84,16 +84,16 @@
 
     imprimirPokedex()
     imprimirTeamPokemon()
+    
    
     function imprimirTeamPokemon(){
-        
-
+        variableCreada = localStorage.getItem('teamPokemon')
+        console.log(variableCreada)
 
         console.log(document)
-        
-       
-        teamPokemon= JSON.parse(localStorage.getItem('teamPokemon'))
-        const contenedorStripeTeam = document.getElementById
+        if(variableCreada != null){
+            teamPokemon= JSON.parse(localStorage.getItem('teamPokemon'))
+            const contenedorStripeTeam = document.getElementById
         ('contenedorSpriteTeam')
         contenedorStripeTeam.innerHTML=""
         
@@ -111,6 +111,29 @@
         contenedorStripeTeam.append(contenedorSprite);
    
         })  
+        }else{
+            const contenedorStripeTeam = document.getElementById
+            ('contenedorSpriteTeam')
+            contenedorStripeTeam.innerHTML=""
+            
+            teamPokemon.forEach((pokemon) => {
+                //Agregar cards
+                let contenedorSprite = document.createElement("div")
+            contenedorSprite.className = "col-md-3  m-1 "
+            contenedorSprite.innerHTML = ` 
+            <div class="text-center"><img src="${pokemon.sprite}" class="img-fluid text-center"></div>
+                    
+            `
+            //Agregar Pokemon
+        
+            
+            contenedorStripeTeam.append(contenedorSprite);
+       
+            })  
+        }
+       
+        
+        
     }
 
 
