@@ -65,17 +65,25 @@
         `
         //Cambiar color de la card
         contenedor.style.backgroundColor = pokemon.typeColor
-        //Agregar Pokemon
+        //Agregar boton Pokemon
         let botonPokemon = document.createElement("button")
         botonPokemon.className = "botonPokemon"
+        let botonEliminarPokemon = document.createElement("button")
+        botonEliminarPokemon.className = "botonEliminarPokemon"
         //Data id para saber que pokemon es
         botonPokemon.setAttribute('data-id', pokemon.numeroPokedex)
         botonPokemon.innerHTML = ` 
         Yo te elijo para mi team!
         
         `
+        botonEliminarPokemon.setAttribute('data-id', pokemon.numeroPokedex)
+        botonEliminarPokemon.innerHTML = ` 
+        Eliminar pokemon de mi team
+        
+        `
         
         contenedor.append(botonPokemon)
+        contenedor.append(botonEliminarPokemon)
         
         contenedorCards.append(contenedor);
    
@@ -137,27 +145,7 @@
     }
 
 
-    //Imprimir team
-
-   /*  function imprimirTeamPokemon() {
-        contenedorSpriteTeam = ""
-        teamPokemon.forEach((pokemon) => {
-            //Agregar cards
-            const contenedorSpriteTeam = document.querySelector ("#contenedorSpriteTeam")
-            console.log(contenedorSpriteTeam)
-            let contenedorSprite = document.createElement("div")
-        contenedorSprite.className = "col-md-4 m-1 "
-        contenedorSprite.innerHTML = ` 
-        <div class="text-center"><img src="${pokemon.sprite}" class="img-fluid text-center"></div>
-        
-        `
-        //agregar sprite al team
-        
-        contenedorSpriteTeam.append(contenedorSprite);
-        
-        })
-    }
- */
+    
     //funcion para la lista dropdown por tipo
     
 
@@ -195,7 +183,9 @@
         
         
         `
-        
+         //Cambiar color de la card
+         contenedor.style.backgroundColor = pokemon.typeColor
+         
         
         contenedorCards.append(contenedor);
         })
@@ -221,7 +211,9 @@
        
         
         `
-        
+         //Cambiar color de la card
+         contenedor.style.backgroundColor = pokemon.typeColor
+         
         
         contenedorCards.append(contenedor);
         })
@@ -245,7 +237,10 @@
         
         
         `
-        
+         //Cambiar color de la card
+         contenedor.style.backgroundColor = pokemon.typeColor
+         
+         
         
         contenedorCards.append(contenedor);
         })
@@ -269,7 +264,10 @@
         
         
         `
+         //Cambiar color de la card
+         contenedor.style.backgroundColor = pokemon.typeColor
         
+         
         
         contenedorCards.append(contenedor);
         })
@@ -294,7 +292,10 @@
        /
         
         `
+         //Cambiar color de la card
+         contenedor.style.backgroundColor = pokemon.typeColor
         
+         
         
         contenedorCards.append(contenedor);
         })
@@ -319,7 +320,10 @@
         
         `
         
+         //Cambiar color de la card
+         contenedor.style.backgroundColor = pokemon.typeColor
         
+         
         contenedorCards.append(contenedor);
         })
     }
@@ -356,8 +360,33 @@ imprimirTeamPokemon()
 
 } 
 
+
+ //Funcion para eliminar Pokemon del team
+
+ const eliminarPokemonDelTeam = (e) => {
+    e.preventDefault()
+const pokemonAEliminar = e.target.getAttribute('data-id')
+console.log(pokemonAEliminar)
+teamPokemon = teamPokemon.filter(pokemon => pokemon.numeroPokedex != pokemonAEliminar)
+
+
+console.log(teamPokemon)
+
+let teamEnJSON = JSON.stringify(teamPokemon)
+localStorage.setItem('teamPokemon',teamEnJSON)
+
+imprimirTeamPokemon()
+
+
+
+} 
+
  
 //Agregar evento a los botones
+
+//BotonAgregar
+
+const agregarEventosALosBotones = () => {
 
 let botonPokemon = document.querySelectorAll(".botonPokemon")
 
@@ -368,5 +397,17 @@ botonPokemon.forEach((boton) =>{
     
 })
 
+//BotonEliminar
+let botonEliminarPokemon = document.querySelectorAll(".botonEliminarPokemon")
 
 
+botonEliminarPokemon.forEach((boton) =>{
+    boton.addEventListener("click",eliminarPokemonDelTeam)
+   
+    
+})
+
+}
+
+
+agregarEventosALosBotones()
