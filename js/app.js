@@ -65,11 +65,14 @@
         `
         //Cambiar color de la card
         contenedor.style.backgroundColor = pokemon.typeColor
+        
+        /* botonPokemon.style.color = pokemon.typeColor
+        botonEliminarPokemon.style.color = pokemon.typeColor */
         //Agregar boton Pokemon
         let botonPokemon = document.createElement("button")
-        botonPokemon.className = "botonPokemon"
+        botonPokemon.className = "botonPokemon btn btn-dark border"
         let botonEliminarPokemon = document.createElement("button")
-        botonEliminarPokemon.className = "botonEliminarPokemon"
+        botonEliminarPokemon.className = "botonEliminarPokemon btn btn-dark  border mt-1"
         //Data id para saber que pokemon es
         botonPokemon.setAttribute('data-id', pokemon.numeroPokedex)
         botonPokemon.innerHTML = ` 
@@ -213,7 +216,7 @@
         `
          //Cambiar color de la card
          contenedor.style.backgroundColor = pokemon.typeColor
-         
+        
         
         contenedorCards.append(contenedor);
         })
