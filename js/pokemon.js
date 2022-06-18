@@ -46,5 +46,10 @@ const pokemon16 = new Pokemon('016',"pidgey","volador","placaje",1,'https://asse
   const pokemon19 = new Pokemon('010',"rattata","normal","placaje",1,'https://assets.pokemon.com/assets/cms2/img/pokedex/detail/019.png','https://www.cpokemon.com/images/pokedex/sprites/dp/019-f.png','#D2B48C')
     
     
+    //Crear la array con los pokemon
+    const listaPokedex = [pokemon1,pokemon2,pokemon3,pokemon4,pokemon5,pokemon6,pokemon7,pokemon8,pokemon9,pokemon10,pokemon11,pokemon12,pokemon13,pokemon14,pokemon15,pokemon16,pokemon17,pokemon18,pokemon19]
+
+    //Crear array de Team
   
+    let teamPokemon = []
      
