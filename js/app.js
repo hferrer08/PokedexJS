@@ -196,14 +196,50 @@ const pokemonNumeroPokedexSeleccionado = e.target.getAttribute('data-id')
 const busquedaPorNoPokedex = listaPokedex.find(pokemon => pokemon.numeroPokedex == pokemonNumeroPokedexSeleccionado)
 
 //Operador ternario
-teamPokemon.length<6? teamPokemon.push(busquedaPorNoPokedex):alert("Máximo 6 pokemon por equipo")
+if(teamPokemon.length<6){
+    teamPokemon.push(busquedaPorNoPokedex)
+    //Si se agrega pokemon aparece un toast con informacion de pokemon agregado 
+    Toastify({
+        text: "Pokemon agregado al equipo",
+        duration: 1500,
+        newWindow: true,
+        close: true,
+        gravity: "top", // `top` or `bottom`
+        position: "left", // `left`, `center` or `right`
+        stopOnFocus: true, // Prevents dismissing of toast on hover
+        style: {
+          background: "linear-gradient(19deg, #21D4FD 0%, #B721FF 100%)",
 
-//console.log(teamPokemon)
+         
+
+        },
+        onClick: function(){} // Callback after click
+      }).showToast();
+}else{
+    //Si son mas de 6 pokemon aparece un mensaje diciendo solo se permiten 6 pokemon por equipo y un pikachu diciendo que no
+    Swal.fire({
+        
+        title: 'Solo se permiten 6 pokemon por equipo',
+        width: 500,
+        padding: '3em',
+        color: '#1B4F72',
+        
+        background: '#fff ',
+        backdrop: `
+          rgba(0,0,125,0.4)
+          url("https://c.tenor.com/-LgdRnkYRN4AAAAC/no-pokemon.gif")
+          right bottom
+          no-repeat
+        `
+      })
+}
+
 
 let teamEnJSON = JSON.stringify(teamPokemon)
 localStorage.setItem('teamPokemon',teamEnJSON)
 
 imprimirTeamPokemon()
+
 
 
 
@@ -219,6 +255,24 @@ imprimirTeamPokemon()
 const pokemonAEliminar = e.target.getAttribute('data-id')
 
 teamPokemon = teamPokemon.filter(pokemon => pokemon.numeroPokedex != pokemonAEliminar)
+
+Toastify({
+    text: "Eliminaste un pokemon del equipo",
+    duration: 1500,
+    newWindow: true,
+    close: true,
+    gravity: "top", // `top` or `bottom`
+    position: "left", // `left`, `center` or `right`
+    stopOnFocus: true, // Prevents dismissing of toast on hover
+    style: {
+      background: "linear-gradient(147deg, #FFE53B 0%, #FF2525 74%)",
+      
+      
+      
+
+    },
+    onClick: function(){} // Callback after click
+  }).showToast();
 
 
 let teamEnJSON = JSON.stringify(teamPokemon)
