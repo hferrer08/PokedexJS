@@ -85,10 +85,12 @@
         
         contenedorCards.append(contenedor);
    
-        })  
+        }) 
+        
     }
 
     imprimirPokedex()
+    
     imprimirTeamPokemon()
     
    
@@ -161,7 +163,7 @@
 }
 
 const filtrarPorTipo = () => {
-     
+    
     const busquedaPorTipo = listaPokedex.filter(pokemon => pokemon.tipo == seleccionTipo.value)
     const contenedorCards = document.getElementById('contenedorCards')
     
@@ -184,6 +186,7 @@ const filtrarPorTipo = () => {
     `
      //Cambiar color de la card
      contenedor.style.backgroundColor = typeColor
+     
      //Agregar boton Pokemon
      let botonPokemon = document.createElement("button")
      botonPokemon.className = "botonPokemon btn btn-dark border"
@@ -191,13 +194,11 @@ const filtrarPorTipo = () => {
      botonEliminarPokemon.className = "botonEliminarPokemon btn btn-dark  border mt-1"
      //Data id para saber que pokemon es
      botonPokemon.setAttribute('data-id', numeroPokedex)
-     botonPokemon.setAttribute('onClick', agregarPokemonATeam)
      botonPokemon.innerHTML = ` 
      Yo te elijo para mi team!
      
      `
      botonEliminarPokemon.setAttribute('data-id', numeroPokedex)
-     botonEliminarPokemon.setAttribute('onClick', eliminarPokemonDelTeam)
      botonEliminarPokemon.innerHTML = ` 
      Eliminar pokemon de mi team
      
@@ -206,9 +207,14 @@ const filtrarPorTipo = () => {
      contenedor.append(botonPokemon)
      contenedor.append(botonEliminarPokemon)
      
+     botonPokemon.addEventListener("click",agregarPokemonATeam)
+     botonEliminarPokemon.addEventListener("click",eliminarPokemonDelTeam)
     
     contenedorCards.append(contenedor);
-    })
+    }
+    
+    )
+    
 }
 
 
@@ -227,7 +233,9 @@ const filtrarPorTipo = () => {
     
         //Operador ternario AND puesto que es un if simple
         //Si el usuario escoge todos los tipos imprimir toda la pokedex
-        seleccionTipo.value==='todos' && imprimirPokedex()   
+        if(seleccionTipo.value==='todos') {
+            imprimirPokedex() 
+            agregarEventosALosBotones()  }
         //Si es tipo agua agregar array busquedaPorTipo que filtra los tipo agua
     if(seleccionTipo.value==='agua'){
         
@@ -297,7 +305,7 @@ console.log(pokemonAEliminar)
 teamPokemon = teamPokemon.filter(pokemon => pokemon.numeroPokedex != pokemonAEliminar)
 
 
-console.log(teamPokemon)
+//console.log(teamPokemon)
 
 let teamEnJSON = JSON.stringify(teamPokemon)
 localStorage.setItem('teamPokemon',teamEnJSON)

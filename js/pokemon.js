@@ -43,7 +43,7 @@ class Pokemon{
 const pokemon16 = new Pokemon('016',"pidgey","volador","placaje",1,'https://assets.pokemon.com/assets/cms2/img/pokedex/detail/016.png','https://www.cpokemon.com/images/pokedex/sprites/dp/016-f.png','#D6D2E7') 
    const pokemon17 = new Pokemon('017',"pidgeotto","volador","placaje",1,'https://assets.pokemon.com/assets/cms2/img/pokedex/detail/017.png','https://www.cpokemon.com/images/pokedex/sprites/dp/017-f.png','#D6D2E7')
    const pokemon18 = new Pokemon('018',"pidgeot","volador","placaje",1,'https://assets.pokemon.com/assets/cms2/img/pokedex/detail/018.png','https://www.cpokemon.com/images/pokedex/sprites/dp/018-f.png','#D6D2E7')
-  const pokemon19 = new Pokemon('010',"rattata","normal","placaje",1,'https://assets.pokemon.com/assets/cms2/img/pokedex/detail/019.png','https://www.cpokemon.com/images/pokedex/sprites/dp/019-f.png','#D2B48C')
+  const pokemon19 = new Pokemon('019',"rattata","normal","placaje",1,'https://assets.pokemon.com/assets/cms2/img/pokedex/detail/019.png','https://www.cpokemon.com/images/pokedex/sprites/dp/019-f.png','#D2B48C')
     
     
     //Crear la array con los pokemon
