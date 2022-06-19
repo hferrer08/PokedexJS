@@ -95,7 +95,31 @@
     
    
     function imprimirTeamPokemon(){
-        /* variableCreada = localStorage.getItem('teamPokemon')
+        let teamPokemon = JSON.parse(localStorage.getItem('teamPokemon'))||[]
+
+        const contenedorStripeTeam = document.getElementById
+       ('contenedorSpriteTeam')
+       contenedorStripeTeam.innerHTML=""
+       
+       teamPokemon.forEach((pokemon) => {
+           //Agregar cards
+           let contenedorSprite = document.createElement("div")
+       contenedorSprite.className = "col-md-3  m-1 "
+       contenedorSprite.innerHTML = ` 
+       <div class="text-center"><img src="${pokemon.sprite}" class="img-fluid text-center"></div>
+               
+       `
+       //Agregar Pokemon
+   
+       
+       contenedorStripeTeam.append(contenedorSprite);
+       
+   })
+      
+      
+      
+        /* Version anterior
+         variableCreada = localStorage.getItem('teamPokemon')
         console.log(variableCreada) */
 
         // console.log(document)
@@ -140,26 +164,7 @@
             })  
         } */
         //Operador ternario OR para ver si existe un teamPokemon guardado en localStorage
-         let teamPokemon = JSON.parse(localStorage.getItem('teamPokemon'))||[]
-
-         const contenedorStripeTeam = document.getElementById
-        ('contenedorSpriteTeam')
-        contenedorStripeTeam.innerHTML=""
         
-        teamPokemon.forEach((pokemon) => {
-            //Agregar cards
-            let contenedorSprite = document.createElement("div")
-        contenedorSprite.className = "col-md-3  m-1 "
-        contenedorSprite.innerHTML = ` 
-        <div class="text-center"><img src="${pokemon.sprite}" class="img-fluid text-center"></div>
-                
-        `
-        //Agregar Pokemon
-    
-        
-        contenedorStripeTeam.append(contenedorSprite);
-        
-    })
 }
 
 const filtrarPorTipo = () => {
@@ -237,33 +242,26 @@ const filtrarPorTipo = () => {
             imprimirPokedex() 
             agregarEventosALosBotones()  }
         //Si es tipo agua agregar array busquedaPorTipo que filtra los tipo agua
-    if(seleccionTipo.value==='agua'){
+        //Operadores logicos AND &&    
+        seleccionTipo.value==='agua' && filtrarPorTipo()
         
-        filtrarPorTipo()
-        
-    }
+    
     
     //Si es tipo fuego agregar array busquedaPorTipo que filtra los tipo fuego
-    if(seleccionTipo.value==='fuego'){
-        filtrarPorTipo()
-    }
+    seleccionTipo.value==='fuego' && filtrarPorTipo()
+    
     //Si es tipo planta agregar array busquedaPorTipo que filtra los tipo planta
-    if(seleccionTipo.value==='planta'){
-        filtrarPorTipo()
-    }
+    seleccionTipo.value==='planta' && filtrarPorTipo()
     //Si es tipo bicho agregar array busquedaPorTipo que filtra los tipo bicho
-    if(seleccionTipo.value==='bicho'){
-        filtrarPorTipo()
-    }
+    seleccionTipo.value==='bicho' && filtrarPorTipo()
+    
     
      //Si es tipo volador agregar array busquedaPorTipo que filtra los tipo volador
-    if(seleccionTipo.value==='volador'){
-        filtrarPorTipo()
-        }
+    seleccionTipo.value==='volador' && filtrarPorTipo()
+        
  //Si es tipo normal agregar array busquedaPorTipo que filtra los tipo volador
-    if(seleccionTipo.value==='normal'){
-        filtrarPorTipo()
-    }
+    seleccionTipo.value==='normal' && filtrarPorTipo()
+    
         
       }
 
@@ -301,7 +299,7 @@ imprimirTeamPokemon()
  const eliminarPokemonDelTeam = (e) => {
     e.preventDefault()
 const pokemonAEliminar = e.target.getAttribute('data-id')
-console.log(pokemonAEliminar)
+//console.log(pokemonAEliminar)
 teamPokemon = teamPokemon.filter(pokemon => pokemon.numeroPokedex != pokemonAEliminar)
 
 
