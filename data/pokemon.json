@@ -1,0 +1,195 @@
+{
+
+"data":[
+    {
+        "nombre": "bulbasaur",
+        "tipo": "planta",
+        "ataque": "hoja afilada",
+        "numeroPokedex": "001",
+        "generacion": 1,
+        "image": "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/001.png",
+        "sprite": "https://www.cpokemon.com/images/pokedex/sprites/dp/001-f.png",
+        "typeColor": "#2CC61A"
+    },
+    {
+        "nombre": "ivysaur",
+        "tipo": "planta",
+        "ataque": "hoja afilada",
+        "numeroPokedex": "002",
+        "generacion": 1,
+        "image": "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/002.png",
+        "sprite": "https://www.cpokemon.com/images/pokedex/sprites/dp/002-f.png",
+        "typeColor": "#2CC61A"
+    },
+    {
+        "nombre": "venusaur",
+        "tipo": "planta",
+        "ataque": "rayo solar",
+        "numeroPokedex": "003",
+        "generacion": 1,
+        "image": "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/003.png",
+        "sprite": "https://www.cpokemon.com/images/pokedex/sprites/dp/003-f.png",
+        "typeColor": "#2CC61A"
+    },
+    {
+        "nombre": "charmander",
+        "tipo": "fuego",
+        "ataque": "ascuas",
+        "numeroPokedex": "004",
+        "generacion": 1,
+        "image": "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/004.png",
+        "sprite": "https://www.cpokemon.com/images/pokedex/sprites/dp/004-f.png",
+        "typeColor": "#FFA500"
+    },
+    {
+        "nombre": "charmeleon",
+        "tipo": "fuego",
+        "ataque": "ascuas",
+        "numeroPokedex": "005",
+        "generacion": 1,
+        "image": "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/005.png",
+        "sprite": "https://www.cpokemon.com/images/pokedex/sprites/dp/005-f.png",
+        "typeColor": "#FFA500"
+    },
+    {
+        "nombre": "charizard",
+        "tipo": "fuego",
+        "ataque": "lanzallamas",
+        "numeroPokedex": "006",
+        "generacion": 1,
+        "image": "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/006.png",
+        "sprite": "https://www.cpokemon.com/images/pokedex/sprites/dp/006-m.png",
+        "typeColor": "#FFA500"
+    },
+    {
+        "nombre": "squirtle",
+        "tipo": "agua",
+        "ataque": "burbujas",
+        "numeroPokedex": "007",
+        "generacion": 1,
+        "image": "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/007.png",
+        "sprite": "https://www.cpokemon.com/images/pokedex/sprites/dp/007-f.png",
+        "typeColor": "#1B4F72"
+    },
+    {
+        "nombre": "wartortle",
+        "tipo": "agua",
+        "ataque": "burbujas",
+        "numeroPokedex": "008",
+        "generacion": 1,
+        "image": "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/008.png",
+        "sprite": "https://www.cpokemon.com/images/pokedex/sprites/dp/008-f.png",
+        "typeColor": "#1B4F72"
+    },
+    {
+        "nombre": "blastoise",
+        "tipo": "agua",
+        "ataque": "hidrobomba",
+        "numeroPokedex": "009",
+        "generacion": 1,
+        "image": "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/009.png",
+        "sprite": "https://www.cpokemon.com/images/pokedex/sprites/dp/009-f.png",
+        "typeColor": "#1B4F72"
+    },
+    {
+        "nombre": "caterpie",
+        "tipo": "bicho",
+        "ataque": "placaje",
+        "numeroPokedex": "010",
+        "generacion": 1,
+        "image": "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/010.png",
+        "sprite": "https://www.cpokemon.com/images/pokedex/sprites/dp/010-f.png",
+        "typeColor": "#6BC61A"
+    },
+    {
+        "nombre": "metapod",
+        "tipo": "bicho",
+        "ataque": "fortaleza",
+        "numeroPokedex": "011",
+        "generacion": 1,
+        "image": "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/011.png",
+        "sprite": "https://www.cpokemon.com/images/pokedex/sprites/dp/011-f.png",
+        "typeColor": "#6BC61A"
+    },
+    {
+        "nombre": "butterfree",
+        "tipo": "bicho",
+        "ataque": "confusion",
+        "numeroPokedex": "012",
+        "generacion": 1,
+        "image": "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/012.png",
+        "sprite": "https://www.cpokemon.com/images/pokedex/sprites/dp/012-f.png",
+        "typeColor": "#6BC61A"
+    },
+    {
+        "nombre": "weedle",
+        "tipo": "bicho",
+        "ataque": "picotazo venenoso",
+        "numeroPokedex": "013",
+        "generacion": 1,
+        "image": "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/013.png",
+        "sprite": "https://www.cpokemon.com/images/pokedex/sprites/dp/013-f.png",
+        "typeColor": "#6BC61A"
+    },
+    {
+        "nombre": "kakuna",
+        "tipo": "bicho",
+        "ataque": "fortaleza",
+        "numeroPokedex": "014",
+        "generacion": 1,
+        "image": "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/014.png",
+        "sprite": "https://www.cpokemon.com/images/pokedex/sprites/dp/014-f.png",
+        "typeColor": "#6BC61A"
+    },
+    {
+        "nombre": "beedrill",
+        "tipo": "bicho",
+        "ataque": "placaje",
+        "numeroPokedex": "015",
+        "generacion": 1,
+        "image": "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/015.png",
+        "sprite": "https://www.cpokemon.com/images/pokedex/sprites/dp/015-f.png",
+        "typeColor": "#6BC61A"
+    },
+    {
+        "nombre": "pidgey",
+        "tipo": "volador",
+        "ataque": "placaje",
+        "numeroPokedex": "016",
+        "generacion": 1,
+        "image": "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/016.png",
+        "sprite": "https://www.cpokemon.com/images/pokedex/sprites/dp/016-f.png",
+        "typeColor": "#D6D2E7"
+    },
+    {
+        "nombre": "pidgeotto",
+        "tipo": "volador",
+        "ataque": "placaje",
+        "numeroPokedex": "017",
+        "generacion": 1,
+        "image": "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/017.png",
+        "sprite": "https://www.cpokemon.com/images/pokedex/sprites/dp/017-f.png",
+        "typeColor": "#D6D2E7"
+    },
+    {
+        "nombre": "pidgeot",
+        "tipo": "volador",
+        "ataque": "placaje",
+        "numeroPokedex": "018",
+        "generacion": 1,
+        "image": "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/018.png",
+        "sprite": "https://www.cpokemon.com/images/pokedex/sprites/dp/018-f.png",
+        "typeColor": "#D6D2E7"
+    },
+    {
+        "nombre": "rattata",
+        "tipo": "normal",
+        "ataque": "placaje",
+        "numeroPokedex": "019",
+        "generacion": 1,
+        "image": "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/019.png",
+        "sprite": "https://www.cpokemon.com/images/pokedex/sprites/dp/019-f.png",
+        "typeColor": "#D2B48C"
+    }
+]
+}

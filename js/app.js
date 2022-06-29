@@ -4,7 +4,23 @@
     
     //funcion para imprimir la Pokedex completa
 
-    function imprimirPokedex(){
+    // Codigo fetch para traer info de pokemon.json
+
+const traerDatos = () =>{
+    fetch('../data/pokemon.json')
+//Traer la respuesta y volverla JSON
+.then((response)=> response.json())
+//JsonResponse.data porque en el archivo .json llamamos el archivo data
+ .then((jsonResponse)=>{
+    listaPokedex=jsonResponse.data
+    imprimirPokedex(listaPokedex)})
+}
+
+
+
+    function imprimirPokedex(listaPokedex){
+
+        
         
         const contenedorCards = document.getElementById('contenedorCards')
         
@@ -26,34 +42,38 @@
         contenedor.style.backgroundColor = typeColor
         
         //Agregar boton Pokemon
-        let botonPokemon = document.createElement("button")
-        botonPokemon.className = "botonPokemon btn btn-dark border"
-        let botonEliminarPokemon = document.createElement("button")
-        botonEliminarPokemon.className = "botonEliminarPokemon btn btn-dark  border mt-1"
-        //Data id para saber que pokemon es
-        botonPokemon.setAttribute('data-id', numeroPokedex)
-        botonPokemon.innerHTML = ` 
-        Yo te elijo para mi team!
-        
-        `
-        botonEliminarPokemon.setAttribute('data-id', numeroPokedex)
-        botonEliminarPokemon.innerHTML = ` 
-        Eliminar pokemon de mi team
-        
-        `
-        
-        contenedor.append(botonPokemon)
-        contenedor.append(botonEliminarPokemon)
-        
-        contenedorCards.append(contenedor);
+     let botonPokemon = document.createElement("button")
+     botonPokemon.className = "botonPokemon btn btn-dark border"
+     let botonEliminarPokemon = document.createElement("button")
+     botonEliminarPokemon.className = "botonEliminarPokemon btn btn-dark  border mt-1"
+     //Data id para saber que pokemon es
+     botonPokemon.setAttribute('data-id', numeroPokedex)
+     botonPokemon.innerHTML = ` 
+     Yo te elijo para mi team!
+     
+     `
+     botonEliminarPokemon.setAttribute('data-id', numeroPokedex)
+     botonEliminarPokemon.innerHTML = ` 
+     Eliminar pokemon de mi team
+     
+     `
+     
+     contenedor.append(botonPokemon)
+     contenedor.append(botonEliminarPokemon)
+     
+     botonPokemon.addEventListener("click",agregarPokemonATeam)
+     botonEliminarPokemon.addEventListener("click",eliminarPokemonDelTeam)
+    
+    contenedorCards.append(contenedor);
    
         }) 
         
     }
-
-    imprimirPokedex()
+    traerDatos()
+    imprimirPokedex(listaPokedex)
     
     imprimirTeamPokemon()
+    
     
    
     function imprimirTeamPokemon(){
@@ -153,8 +173,9 @@ const filtrarPorTipo = () => {
         //Operador ternario AND puesto que es un if simple
         //Si el usuario escoge todos los tipos imprimir toda la pokedex
         if(seleccionTipo.value==='todos') {
+            traerDatos()
             imprimirPokedex() 
-            agregarEventosALosBotones()  }
+              }
         //Si es tipo agua agregar array busquedaPorTipo que filtra los tipo agua
         //Operadores logicos AND &&    
         seleccionTipo.value==='agua' && filtrarPorTipo()
@@ -254,6 +275,11 @@ imprimirTeamPokemon()
     //Tomar info del target data id que es el numero de pokedex para posteriormente con ese NoPokedex saber que pokemon clickeo el usuario
 const pokemonAEliminar = e.target.getAttribute('data-id')
 
+ //Verificar existencia en pokedex
+ const existe = teamPokemon.some(pokemon => pokemon.numeroPokedex === pokemonAEliminar)
+
+if (existe==true){
+
 teamPokemon = teamPokemon.filter(pokemon => pokemon.numeroPokedex != pokemonAEliminar)
 
 Toastify({
@@ -274,7 +300,14 @@ Toastify({
     onClick: function(){} // Callback after click
   }).showToast();
 
-
+}else{
+    Swal.fire({
+        icon: 'error',
+        title: 'Error',
+        text: 'Este pokemon no esta en tu equipo',
+        
+      })
+}
 let teamEnJSON = JSON.stringify(teamPokemon)
 localStorage.setItem('teamPokemon',teamEnJSON)
 
@@ -289,7 +322,7 @@ imprimirTeamPokemon()
 
 //BotonAgregar
 
-const agregarEventosALosBotones = () => {
+/* const agregarEventosALosBotones = () => {
 
 let botonPokemon = document.querySelectorAll(".botonPokemon")
 
@@ -311,10 +344,8 @@ botonEliminarPokemon.forEach((boton) =>{
 })
 
 }
+ */
+
+// agregarEventosALosBotones()
 
 
-agregarEventosALosBotones()
-
-
-
-       
