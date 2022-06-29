@@ -81,4 +81,40 @@
             contenedorStripeTeam.append(contenedorSprite);
        
             })  
-        } */
+        } 
+        
+        //Agregar evento a los botones
+
+//BotonAgregar
+
+/* const agregarEventosALosBotones = () => {
+
+let botonPokemon = document.querySelectorAll(".botonPokemon")
+
+
+botonPokemon.forEach((boton) =>{
+    boton.addEventListener("click",agregarPokemonATeam)
+   
+    
+})
+
+//BotonEliminar
+let botonEliminarPokemon = document.querySelectorAll(".botonEliminarPokemon")
+
+
+botonEliminarPokemon.forEach((boton) =>{
+    boton.addEventListener("click",eliminarPokemonDelTeam)
+   
+    
+})
+
+}
+ 
+
+// agregarEventosALosBotones()
+        
+        
+        
+        
+        
+        */

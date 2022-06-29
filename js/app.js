@@ -1,13 +1,11 @@
  
   
- //AplicarInnerHTML - DOM
-    
-    //funcion para imprimir la Pokedex completa
+ 
 
     // Codigo fetch para traer info de pokemon.json
 
 const traerDatos = () =>{
-    fetch('../data/pokemon.json')
+    fetch('../pokemon.json')
 //Traer la respuesta y volverla JSON
 .then((response)=> response.json())
 //JsonResponse.data porque en el archivo .json llamamos el archivo data
@@ -15,8 +13,11 @@ const traerDatos = () =>{
     listaPokedex=jsonResponse.data
     imprimirPokedex(listaPokedex)})
 }
+traerDatos()
 
-
+//AplicarInnerHTML - DOM
+    
+    //funcion para imprimir la Pokedex completa
 
     function imprimirPokedex(listaPokedex){
 
@@ -69,7 +70,7 @@ const traerDatos = () =>{
         }) 
         
     }
-    traerDatos()
+    
     imprimirPokedex(listaPokedex)
     
     imprimirTeamPokemon()
@@ -318,34 +319,6 @@ imprimirTeamPokemon()
 } 
 
  
-//Agregar evento a los botones
 
-//BotonAgregar
-
-/* const agregarEventosALosBotones = () => {
-
-let botonPokemon = document.querySelectorAll(".botonPokemon")
-
-
-botonPokemon.forEach((boton) =>{
-    boton.addEventListener("click",agregarPokemonATeam)
-   
-    
-})
-
-//BotonEliminar
-let botonEliminarPokemon = document.querySelectorAll(".botonEliminarPokemon")
-
-
-botonEliminarPokemon.forEach((boton) =>{
-    boton.addEventListener("click",eliminarPokemonDelTeam)
-   
-    
-})
-
-}
- */
-
-// agregarEventosALosBotones()
 
 
