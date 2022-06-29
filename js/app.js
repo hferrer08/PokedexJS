@@ -5,7 +5,7 @@
     // Codigo fetch para traer info de pokemon.json
 
 const traerDatos = () =>{
-    fetch('../data/pokemon.json')
+    fetch('https://hferrer08.github.io/PokedexJS/data/pokemon.json')
 //Traer la respuesta y volverla JSON
 .then((response)=> response.json())
 //JsonResponse.data porque en el archivo .json llamamos el archivo data
