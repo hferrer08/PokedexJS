@@ -88,7 +88,7 @@ traerDatos()
        teamPokemon.forEach((pokemon) => {
            //Agregar cards
            let contenedorSprite = document.createElement("div")
-       contenedorSprite.className = "col-md-3  m-1 "
+       contenedorSprite.className = "col-md-3  m-1  "
        contenedorSprite.innerHTML = ` 
        <div class="text-center"><img src="${pokemon.sprite}" class="img-fluid text-center"></div>
                
@@ -318,7 +318,78 @@ imprimirTeamPokemon()
 
 } 
 
+ //Input busqueda pokemon
+
+ const BusquedaPorInput = () => {
+
+ const inputBusquedaPokemon = document.getElementById("inputBusquedaPokemon");
+ 
+ const contenedorCards = document.getElementById('contenedorCards')
+ contenedorCards.innerHTML = ""
+ let pokemonABuscar = inputBusquedaPokemon.value
+
+//Para verificar si incluye pokemonABuscar, lo que escribe el usuario
+
+ const busquedaPorNombre = listaPokedex.filter(pokemon => pokemon.nombre.toLowerCase().includes (pokemonABuscar.toLowerCase())) 
+
+    
+    
+    busquedaPorNombre.forEach((pokemon) => {
+
+        
+
+        //Desestructuracion del objeto
+     let {image, nombre, tipo, ataque, typeColor, numeroPokedex, generacion} = pokemon
+       
+     
+     
+     let contenedor = document.createElement("div")
+        
+    contenedor.className = "col-md-4 bordesRedondeados m-1 fondoCard"
+    contenedor.innerHTML = ` 
+    
+    
+    <div class="text-center"><img src="${image}" class="img-fluid text-center"></div>
+    <h3 class="colorTexto text-center">${nombre}</h3>
+    <p class="colorTexto">Pokemon tipo ${tipo}, de ${generacion} generación, su ataque mas poderoso es ${ataque}</p>
+    </div>
+    
+    
+    
+    `
+     //Cambiar color de la card
+     contenedor.style.backgroundColor = typeColor
+     
+     //Agregar boton Pokemon
+     let botonPokemon = document.createElement("button")
+     botonPokemon.className = "botonPokemon btn btn-dark border"
+     let botonEliminarPokemon = document.createElement("button")
+     botonEliminarPokemon.className = "botonEliminarPokemon btn btn-dark  border mt-1"
+     //Data id para saber que pokemon es
+     botonPokemon.setAttribute('data-id', numeroPokedex)
+     botonPokemon.innerHTML = ` 
+     Yo te elijo para mi team!
+     
+     `
+     botonEliminarPokemon.setAttribute('data-id', numeroPokedex)
+     botonEliminarPokemon.innerHTML = ` 
+     Eliminar pokemon de mi team
+     
+     `
+     
+     contenedor.append(botonPokemon)
+     contenedor.append(botonEliminarPokemon)
+     
+     botonPokemon.addEventListener("click",agregarPokemonATeam)
+     botonEliminarPokemon.addEventListener("click",eliminarPokemonDelTeam)
+    
+    contenedorCards.append(contenedor);
+    }
+    
+    )
+
  
 
 
 
+} 

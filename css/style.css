@@ -31,6 +31,31 @@ font-family: 'Saira Condensed', sans-serif;
 #contenedorCards{
     text-align: center;
 }
+#contenedorSpriteTeam{
+    text-align: center;
+    background-color: #507DBC;
+    
+}
 .colorBusqueda{
     color:antiquewhite
 }
+.botonPokemon{
+transition: all 1s;
+}
+.botonPokemon:hover{
+ background-color: #74EBD5;
+background-image: linear-gradient(90deg, #74EBD5 0%, #9FACE6 100%);
+color: black;
+     
+}
+.botonEliminarPokemon{
+    transition: all 1s;
+}
+.botonEliminarPokemon:hover{
+    background-color: #FAD961;
+    background-image: linear-gradient(204deg, #FAD961 0%, #F76B1C 100%);
+  
+     
+}
+    
+    
