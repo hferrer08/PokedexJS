@@ -7,8 +7,8 @@
         "ataque": "hoja afilada",
         "numeroPokedex": "001",
         "generacion": 1,
-        "image": "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/001.png",
-        "sprite": "https://www.cpokemon.com/images/pokedex/sprites/dp/001-f.png",
+        "image": "./images/bulbasaur.png",
+        "sprite": "./images/bulbasaurSprite.gif",
         "typeColor": "#2CC61A"
     },
     {
@@ -17,8 +17,8 @@
         "ataque": "hoja afilada",
         "numeroPokedex": "002",
         "generacion": 1,
-        "image": "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/002.png",
-        "sprite": "https://www.cpokemon.com/images/pokedex/sprites/dp/002-f.png",
+        "image": "./images/ivysaur.png",
+        "sprite": "./images/ivysaurSprite.gif",
         "typeColor": "#2CC61A"
     },
     {
@@ -27,8 +27,8 @@
         "ataque": "rayo solar",
         "numeroPokedex": "003",
         "generacion": 1,
-        "image": "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/003.png",
-        "sprite": "https://www.cpokemon.com/images/pokedex/sprites/dp/003-f.png",
+        "image": "./images/venusaur.png",
+        "sprite": "./images/venusaurSprite.gif",
         "typeColor": "#2CC61A"
     },
     {
@@ -37,8 +37,8 @@
         "ataque": "ascuas",
         "numeroPokedex": "004",
         "generacion": 1,
-        "image": "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/004.png",
-        "sprite": "https://www.cpokemon.com/images/pokedex/sprites/dp/004-f.png",
+        "image": "./images/charmander.png",
+        "sprite": "./images/charmanderSprite.gif",
         "typeColor": "#FFA500"
     },
     {
@@ -47,8 +47,8 @@
         "ataque": "ascuas",
         "numeroPokedex": "005",
         "generacion": 1,
-        "image": "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/005.png",
-        "sprite": "https://www.cpokemon.com/images/pokedex/sprites/dp/005-f.png",
+        "image": "./images/charmeleon.png",
+        "sprite": "./images/charmeleonSprite.gif",
         "typeColor": "#FFA500"
     },
     {
@@ -57,8 +57,8 @@
         "ataque": "lanzallamas",
         "numeroPokedex": "006",
         "generacion": 1,
-        "image": "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/006.png",
-        "sprite": "https://www.cpokemon.com/images/pokedex/sprites/dp/006-m.png",
+        "image": "./images/charizard.png",
+        "sprite": "./images/charizardSprite.gif",
         "typeColor": "#FFA500"
     },
     {
@@ -67,8 +67,8 @@
         "ataque": "burbujas",
         "numeroPokedex": "007",
         "generacion": 1,
-        "image": "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/007.png",
-        "sprite": "https://www.cpokemon.com/images/pokedex/sprites/dp/007-f.png",
+        "image": "./images/squirtle.png",
+        "sprite": "./images/squirtleSprite.gif",
         "typeColor": "#1B4F72"
     },
     {
@@ -77,8 +77,8 @@
         "ataque": "burbujas",
         "numeroPokedex": "008",
         "generacion": 1,
-        "image": "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/008.png",
-        "sprite": "https://www.cpokemon.com/images/pokedex/sprites/dp/008-f.png",
+        "image": "./images/wartortle.png",
+        "sprite": "./images/wartortleSprite.gif",
         "typeColor": "#1B4F72"
     },
     {
@@ -87,8 +87,8 @@
         "ataque": "hidrobomba",
         "numeroPokedex": "009",
         "generacion": 1,
-        "image": "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/009.png",
-        "sprite": "https://www.cpokemon.com/images/pokedex/sprites/dp/009-f.png",
+        "image": "./images/blastoise.png",
+        "sprite": "./images/blastoiseSprite.gif",
         "typeColor": "#1B4F72"
     },
     {
@@ -97,8 +97,8 @@
         "ataque": "placaje",
         "numeroPokedex": "010",
         "generacion": 1,
-        "image": "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/010.png",
-        "sprite": "https://www.cpokemon.com/images/pokedex/sprites/dp/010-f.png",
+        "image": "./images/caterpie.png",
+        "sprite": "./images/caterpieSprite.gif",
         "typeColor": "#6BC61A"
     },
     {
@@ -107,8 +107,8 @@
         "ataque": "fortaleza",
         "numeroPokedex": "011",
         "generacion": 1,
-        "image": "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/011.png",
-        "sprite": "https://www.cpokemon.com/images/pokedex/sprites/dp/011-f.png",
+        "image": "./images/metapod.png",
+        "sprite": "./images/metapodSprite.gif",
         "typeColor": "#6BC61A"
     },
     {
@@ -117,8 +117,8 @@
         "ataque": "confusion",
         "numeroPokedex": "012",
         "generacion": 1,
-        "image": "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/012.png",
-        "sprite": "https://www.cpokemon.com/images/pokedex/sprites/dp/012-f.png",
+        "image": "./images/butterfree.png",
+        "sprite": "./images/butterfreeSprite.gif",
         "typeColor": "#6BC61A"
     },
     {
@@ -127,8 +127,8 @@
         "ataque": "picotazo venenoso",
         "numeroPokedex": "013",
         "generacion": 1,
-        "image": "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/013.png",
-        "sprite": "https://www.cpokemon.com/images/pokedex/sprites/dp/013-f.png",
+        "image": "./images/weedle.png",
+        "sprite": "./images/weedleSprite.gif",
         "typeColor": "#6BC61A"
     },
     {
@@ -137,8 +137,8 @@
         "ataque": "fortaleza",
         "numeroPokedex": "014",
         "generacion": 1,
-        "image": "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/014.png",
-        "sprite": "https://www.cpokemon.com/images/pokedex/sprites/dp/014-f.png",
+        "image": "./images/kakuna.png",
+        "sprite": "./images/kakunaSprite.gif",
         "typeColor": "#6BC61A"
     },
     {
@@ -147,8 +147,8 @@
         "ataque": "placaje",
         "numeroPokedex": "015",
         "generacion": 1,
-        "image": "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/015.png",
-        "sprite": "https://www.cpokemon.com/images/pokedex/sprites/dp/015-f.png",
+        "image": "./images/beedrill.png",
+        "sprite": "./images/beedrillSprite.gif",
         "typeColor": "#6BC61A"
     },
     {
@@ -157,9 +157,9 @@
         "ataque": "placaje",
         "numeroPokedex": "016",
         "generacion": 1,
-        "image": "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/016.png",
-        "sprite": "https://www.cpokemon.com/images/pokedex/sprites/dp/016-f.png",
-        "typeColor": "#D6D2E7"
+        "image": "./images/pidgey.png",
+        "sprite": "./images/pidgeySprite.gif",
+        "typeColor": "#F3F3F3"
     },
     {
         "nombre": "pidgeotto",
@@ -167,9 +167,9 @@
         "ataque": "placaje",
         "numeroPokedex": "017",
         "generacion": 1,
-        "image": "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/017.png",
-        "sprite": "https://www.cpokemon.com/images/pokedex/sprites/dp/017-f.png",
-        "typeColor": "#D6D2E7"
+        "image": "./images/pidgeotto.png",
+        "sprite": "./images/pidgeottoSprite.gif",
+        "typeColor": "#F3F3F3"
     },
     {
         "nombre": "pidgeot",
@@ -177,9 +177,9 @@
         "ataque": "placaje",
         "numeroPokedex": "018",
         "generacion": 1,
-        "image": "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/018.png",
-        "sprite": "https://www.cpokemon.com/images/pokedex/sprites/dp/018-f.png",
-        "typeColor": "#D6D2E7"
+        "image": "./images/pidgeot.png",
+        "sprite": "./images/pidgeotSprite.gif",
+        "typeColor": "#F3F3F3"
     },
     {
         "nombre": "rattata",
@@ -187,9 +187,160 @@
         "ataque": "placaje",
         "numeroPokedex": "019",
         "generacion": 1,
-        "image": "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/019.png",
-        "sprite": "https://www.cpokemon.com/images/pokedex/sprites/dp/019-f.png",
+        "image": "./images/rattata.png",
+        "sprite": "./images/rattataSprite.gif",
         "typeColor": "#D2B48C"
+    },
+    {
+        "nombre": "raticate",
+        "tipo": "normal",
+        "ataque": "placaje",
+        "numeroPokedex": "020",
+        "generacion": 1,
+        "image": "./images/raticate.png",
+        "sprite": "./images/raticateSprite.gif",
+        "typeColor": "#D6D2E7"
+    },
+    {
+        "nombre": "spearow",
+        "tipo": "volador",
+        "ataque": "tornado",
+        "numeroPokedex": "021",
+        "generacion": 1,
+        "image": "./images/spearow.png",
+        "sprite": "./images/spearowSprite.gif",
+        "typeColor": "#F3F3F3"
+    },
+    {
+        "nombre": "fearow",
+        "tipo": "volador",
+        "ataque": "tornado",
+        "numeroPokedex": "022",
+        "generacion": 1,
+        "image": "./images/fearow.png",
+        "sprite": "./images/fearowSprite.gif",
+        "typeColor": "#F3F3F3"
+    },
+    {
+        "nombre": "ekans",
+        "tipo": "veneno",
+        "ataque": "picotazo venenoso",
+        "numeroPokedex": "023",
+        "generacion": 1,
+        "image": "./images/ekans.png",
+        "sprite": "./images/ekansSprite.gif",
+        "typeColor": "#b97fc9"
+    },
+    {
+        "nombre": "arbok",
+        "tipo": "veneno",
+        "ataque": "colmillo venenoso",
+        "numeroPokedex": "024",
+        "generacion": 1,
+        "image": "./images/arbok.png",
+        "sprite": "./images/arbokSprite.gif",
+        "typeColor": "#b97fc9"
+    },
+    {
+        "nombre": "pikachu",
+        "tipo": "electrico",
+        "ataque": "placaje eléctrico",
+        "numeroPokedex": "025",
+        "generacion": 1,
+        "image": "./images/pikachu.png",
+        "sprite": "./images/pikachuSprite.gif",
+        "typeColor": "#ffcc33"
+    },
+    {
+        "nombre": "raichu",
+        "tipo": "electrico",
+        "ataque": "placaje eléctrico",
+        "numeroPokedex": "026",
+        "generacion": 1,
+        "image": "./images/raichu.png",
+        "sprite": "./images/raichuSprite.gif",
+        "typeColor": "#ffcc33"
+    },
+    {
+        "nombre": "sandshrew",
+        "tipo": "tierra",
+        "ataque": "excavar",
+        "numeroPokedex": "027",
+        "generacion": 1,
+        "image": "./images/sandshrew.png",
+        "sprite": "./images/sandshrewSprite.gif",
+        "typeColor": "#ddbb55"
+    },
+    {
+        "nombre": "sandslash",
+        "tipo": "tierra",
+        "ataque": "terremoto",
+        "numeroPokedex": "028",
+        "generacion": 1,
+        "image": "./images/sandslash.png",
+        "sprite": "./images/sandslashSprite.gif",
+        "typeColor": "#ddbb55"
+    },
+    {
+        "nombre": "nidoran",
+        "tipo": "veneno",
+        "ataque": "picotazo venenoso",
+        "numeroPokedex": "029",
+        "generacion": 1,
+        "image": "./images/nidoranF.png",
+        "sprite": "./images/nidoranFSprite.gif",
+        "typeColor": "#b97fc9"
+    },
+    {
+        "nombre": "nidorina",
+        "tipo": "veneno",
+        "ataque": "picotazo venenoso",
+        "numeroPokedex": "030",
+        "generacion": 1,
+        "image": "./images/nidorina.png",
+        "sprite": "./images/nidorinaSprite.gif",
+        "typeColor": "#b97fc9"
+    },
+    {
+        "nombre": "nidoqueen",
+        "tipo": "veneno",
+        "ataque": "colmillo venenoso",
+        "numeroPokedex": "031",
+        "generacion": 1,
+        "image": "./images/nidoqueen.png",
+        "sprite": "./images/nidoqueenSprite.gif",
+        "typeColor": "#b97fc9"
+    },
+    {
+        "nombre": "nidoran",
+        "tipo": "veneno",
+        "ataque": "picotazo venenoso",
+        "numeroPokedex": "032",
+        "generacion": 1,
+        "image": "./images/nidoranM.png",
+        "sprite": "./images/nidoranMSprite.gif",
+        "typeColor": "#b97fc9"
+    },
+    {
+        "nombre": "nidorino",
+        "tipo": "veneno",
+        "ataque": "picotazo venenoso",
+        "numeroPokedex": "033",
+        "generacion": 1,
+        "image": "./images/nidorino.png",
+        "sprite": "./images/nidorinoSprite.gif",
+        "typeColor": "#b97fc9"
+    },
+    {
+        "nombre": "nidoking",
+        "tipo": "veneno",
+        "ataque": "colmillo venenoso",
+        "numeroPokedex": "034",
+        "generacion": 1,
+        "image": "./images/nidoking.png",
+        "sprite": "./images/nidokingSprite.gif",
+        "typeColor": "#b97fc9"
     }
+
 ]
 }

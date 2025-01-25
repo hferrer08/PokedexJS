@@ -57,5 +57,10 @@ color: black;
   
      
 }
-    
+.spriteGif{
+    object-fit: contain !important;
+    background-size: contain; /* Ajusta sin distorsionar */
+  background-repeat: no-repeat;
+  background-position: center;
+}  
     
