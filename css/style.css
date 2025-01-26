@@ -33,7 +33,7 @@ font-family: 'Saira Condensed', sans-serif;
 }
 #contenedorSpriteTeam{
     text-align: center;
-    background-color: #507DBC;
+    
     
 }
 .colorBusqueda{
@@ -120,4 +120,10 @@ color: black;
     text-align: right;
   }
   
+  .floating-btn {
+    position: fixed;
+    bottom: 20px; /* Ajusta la distancia desde la parte inferior */
+    right: 20px; /* Ajusta la distancia desde la parte derecha */
+    z-index: 1000; /* Asegura que el botón se quede sobre otros elementos */
+}
  

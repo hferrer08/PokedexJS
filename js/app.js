@@ -101,7 +101,7 @@ function imprimirPokedex(listaPokedex) {
 
    // Crear el contenedor principal de la card
   const card = document.createElement('div');
-  card.className='custom-card col-5 m-1 shadow';
+  card.className='custom-card col-lg-5 col-md-5 col-sm-12 m-1 shadow';
 
   // Crear el contenedor para la imagen de la card
   const cardImage = document.createElement('div');
@@ -545,3 +545,50 @@ const revisaSiHayPokemonEnEquipo = () => {
 };
 
 revisaSiHayPokemonEnEquipo();
+
+//Manejo modal
+
+// Al cerrar modal - se corrige conflicto por focus de un elemento oculto
+
+// Agregar la funcionalidad de cierre manual al botón
+document.getElementById('cerrarModal').addEventListener('click', function () {
+  // Obtener la instancia del modal
+  var modalElement = document.getElementById('exampleModal');
+  var modal = bootstrap.Modal.getInstance(modalElement); // Obtener la instancia de Bootstrap Modal
+  
+  // Cerrar el modal
+  modal.hide();
+
+  // Desactivar temporalmente la interacción con el modal
+  modalElement.setAttribute('inert', 'true');
+
+  // Mover el foco al body o cualquier otro elemento para evitar el conflicto
+  document.body.focus();
+
+  // Esperar a que el modal se oculte completamente antes de quitar el atributo inert
+  setTimeout(function() {
+      modalElement.removeAttribute('inert');
+  }, 300);  // Ajusta el tiempo de espera si es necesario
+});
+
+
+document.getElementById('btnEquis').addEventListener('click', function () {
+  // Obtener la instancia del modal
+  var modalElement = document.getElementById('exampleModal');
+  var modal = bootstrap.Modal.getInstance(modalElement); // Obtener la instancia de Bootstrap Modal
+  
+ 
+  // Desactivar temporalmente la interacción con el modal
+  modalElement.setAttribute('inert', 'true');
+
+  // Mover el foco al body o cualquier otro elemento para evitar el conflicto
+  document.body.focus();
+
+  // Esperar a que el modal se oculte completamente antes de quitar el atributo inert
+  setTimeout(function() {
+      modalElement.removeAttribute('inert');
+  }, 300);  // Ajusta el tiempo de espera si es necesario
+});
+
+
+

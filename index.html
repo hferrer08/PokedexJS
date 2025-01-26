@@ -16,17 +16,60 @@
 
 </head>
 <body class="bg-dark">
+    <button class="btn btn-info floating-btn" data-bs-toggle="modal" data-bs-target="#exampleModal">
+        Ver mi team
+    </button>
+    
+    
+    
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header bg-dark">
+                    <h5 class="modal-title text-white" id="exampleModalLabel">Tu team pokemon</h5>
+                    <button id="btnEquis" type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body bg-secondary">
+                    <div class="row d-flex justify-content-around">
+                        <div class="col-md-12 mb-3">
+                           
+                            <div id="contenedorSpriteTeam" class="row d-flex justify-content-around m-1">
+                                <!-- Contenedor para ingresar a los pokemon escogidos por el usuario para su team -->
+                            </div>
+                            <div class="row d-flex justify-content-center col-12 mt-2">
+                                <button id="btnLimpiarTeam" type="button" class="btn btn-danger col-6">Eliminar todo el equipo</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+                <div class="modal-footer bg-dark">
+                    <button id="cerrarModal" type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+      <!-- Fin Modal -->
+      
+   
+
+
+
+
+   
+      
 <header class="container-fluid bannerTitulo">
 <div class="container ">
     <h1 class="text-danger">PokedexJS</h1>
 </div>
-<div class="row">
-    <div class="col-md-12 "><h2 class="text-center colorTitulo">Proyecto realizado por Hubert Ferrer</h2></div>
+<div class="row col-12">
+    <div class="col-12 "><h2 class="text-center colorTitulo">Proyecto realizado por Hubert Ferrer</h2></div>
 </div>
 
 </header>
 
-<main>
+<main class="container-fluid">
     <div class="row d-flex justify-content-center">
 
 
@@ -44,25 +87,11 @@
 </div>
 
 </div>
-<div class="row mt-3 justify-content-center">
-    <div class="col-md-4 mb-3">
-        <h3 class="colorBusqueda text-center"> Tu team elegido es: </h3>
-    <div id="contenedorSpriteTeam" class="row d-flex  justify-content-around bordesRedondeados m-1">
-        
-        <!-- Contenedor para ingresar a los pokemon escogidos por el usuario para su team -->
-    </div>
-    <div class="row d-flex justify-content-center col-12 mt-2">
-        <button id="btnLimpiarTeam" type="button" class="btn btn-outline-danger col-6">Eliminar todo el equipo </button>
-    
-    </button>
-    
-    </div>
-    </div>
-</div>
-<div class="row mt-3 justify-content-center">
+
+<div class="row mt-3 col-12 justify-content-center">
    
-<div class="col-md-10 mb-3">
-<div id="contenedorCards" class="row d-flex justify-content-around ">   
+<div class="col-12 mb-3 d-flex justify-content-center">
+<div id="contenedorCards" class="row col-12 d-flex justify-content-around ">   
 
 <!-- Contenedor para ingresar cards de pokemon desde JS -->
 
@@ -81,7 +110,8 @@
 
 //Script bootstrap
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
+   
     <script src="js/pokemon.js"></script>
     <script src="js/app.js"></script>
 
