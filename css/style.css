@@ -68,3 +68,56 @@ color: black;
     width: 50% !important; 
     object-fit: contain; 
   }  
+
+
+  .custom-card {
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    margin: 15px;
+    overflow: hidden;
+  }
+  
+  /* Estilos para la imagen de la card */
+  .custom-card-image {
+    position: relative !important;
+    object-fit: cover;
+  }
+  
+  .custom-card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ajusta la imagen para cubrir el área sin distorsionar */
+  }
+  
+  /* Título sobre la imagen */
+  .custom-card-title {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    color: white;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.6);
+  }
+  
+  /* Contenido de la card */
+  .custom-card-content {
+    padding: 15px;
+  }
+  
+  .custom-card-content p {
+    font-size: 1rem;
+    color: #333;
+    margin: 0;
+  }
+  
+  /* Estilos para la acción de la card (enlace) */
+  .custom-card-action {
+  
+    padding: 10px;
+    text-align: right;
+  }
+  
+ 

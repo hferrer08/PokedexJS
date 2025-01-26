@@ -243,7 +243,7 @@
     },
     {
         "nombre": "pikachu",
-        "tipo": "electrico",
+        "tipo": "eléctrico",
         "ataque": "placaje eléctrico",
         "numeroPokedex": "025",
         "generacion": 1,
@@ -253,7 +253,7 @@
     },
     {
         "nombre": "raichu",
-        "tipo": "electrico",
+        "tipo": "eléctrico",
         "ataque": "placaje eléctrico",
         "numeroPokedex": "026",
         "generacion": 1,
