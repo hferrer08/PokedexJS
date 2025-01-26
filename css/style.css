@@ -63,4 +63,8 @@ color: black;
   background-repeat: no-repeat;
   background-position: center;
 }  
-    
+.img-limited {
+    height: 50% !important;
+    width: 50% !important; 
+    object-fit: contain; 
+  }  

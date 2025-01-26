@@ -14,6 +14,18 @@ const traerDatos = () => {
 };
 traerDatos();
 
+const sweetConfirmacionEliminar = async (titulo) => {
+    const result = await Swal.fire({
+      title: titulo,
+      showDenyButton: true,
+      showCancelButton: false,
+      confirmButtonText: "Sí",
+      denyButtonText: "No",
+    });
+  
+    return result.isConfirmed;  // Retorna si el usuario confirmó (hizo clic en "Sí")
+  };
+
 function generarOpcionesSelect() {
       
     // Obtener el contenedor del select
@@ -54,9 +66,9 @@ function imprimirPokedex(listaPokedex) {
       pokemon;
     //Agregar cards
     let contenedor = document.createElement("div");
-    contenedor.className = "col-md-5 bordesRedondeados m-1 ";
+    contenedor.className = "col-5 bordesRedondeados m-1 ";
     contenedor.innerHTML = ` 
-        <div class="text-center"><img src="${image}" class="img-fluid text-center"></div>
+        <div class="col-12 text-center"><img src="${image}" class="img-fluid text-center img-limited"></div>
         <h3 class="colorTexto text-center">${nombre}</h3>
         <p class="colorTexto">Pokemon tipo ${tipo}, de ${generacion} generación, su ataque mas poderoso es ${ataque}</p>
         </div>
@@ -108,7 +120,7 @@ function imprimirTeamPokemon() {
   teamPokemon.forEach((pokemon) => {
     //Agregar cards
     let contenedorSprite = document.createElement("div");
-    contenedorSprite.className = "col-md-3  m-1  ";
+    contenedorSprite.className = "col-3 m-1";
     contenedorSprite.innerHTML = ` 
        <div class="text-center d-flex align-items-center"><img src="${pokemon.sprite}" class="img-fluid text-center spriteGif"></div>
                
@@ -131,11 +143,11 @@ const filtrarPorTipo = () => {
       pokemon;
     let contenedor = document.createElement("div");
 
-    contenedor.className = "col-md-5 bordesRedondeados m-1 fondoCard";
+    contenedor.className = "col-5 bordesRedondeados m-1 fondoCard";
     contenedor.innerHTML = ` 
     
     
-    <div class="text-center"><img src="${image}" class="img-fluid text-center"></div>
+    <div class="col-12 text-center"><img src="${image}" class="img-fluid text-center img-limited"></div>
     <h3 class="colorTexto text-center">${nombre}</h3>
     <p class="colorTexto">Pokemon tipo ${tipo}, de ${generacion} generación, su ataque mas poderoso es ${ataque}</p>
     </div>
@@ -258,7 +270,7 @@ const agregarPokemonATeam = (e) => {
 
   }
 
-  
+  revisaSiHayPokemonEnEquipo();
 };
 
 //Funcion para eliminar Pokemon del team
@@ -266,6 +278,8 @@ const agregarPokemonATeam = (e) => {
 const eliminarPokemonDelTeam = (e) => {
   //Tomar info del evento 'e'
   e.preventDefault();
+
+  teamPokemon = JSON.parse(localStorage.getItem("teamPokemon")) || [];
   //Tomar info del target data id que es el numero de pokedex para posteriormente con ese NoPokedex saber que pokemon clickeo el usuario
   const pokemonAEliminar = e.target.getAttribute("data-id");
 
@@ -303,6 +317,7 @@ const eliminarPokemonDelTeam = (e) => {
   localStorage.setItem("teamPokemon", teamEnJSON);
 
   imprimirTeamPokemon();
+  revisaSiHayPokemonEnEquipo();
 };
 
 //Input busqueda pokemon
@@ -369,3 +384,70 @@ const BusquedaPorInput = () => {
     contenedorCards.append(contenedor);
   });
 };
+
+const limpiarEquipo = async (e) => {
+    //Tomar info del evento 'e'
+    e.preventDefault();
+  
+    const cambioAprobado = await sweetConfirmacionEliminar("¿Está seguro que desea eliminar todos los pokemon de tu equipo?");
+
+    teamPokemon = JSON.parse(localStorage.getItem("teamPokemon")) || [];
+
+    if(cambioAprobado){
+        if (teamPokemon.length > 0) {
+
+            teamPokemon = [];
+      
+              
+            Toastify({
+              text: "Eliminaste todos los pokemon de tu equipo.",
+              duration: 1500,
+              newWindow: true,
+              close: true,
+              gravity: "top", // `top` or `bottom`
+              position: "left", // `left`, `center` or `right`
+              stopOnFocus: true, // Prevents dismissing of toast on hover
+              style: {
+                background: "linear-gradient(147deg, #FFE53B 0%, #FF2525 74%)",
+              },
+              onClick: function () {}, // Callback after click
+            }).showToast();
+          } else {
+            Swal.fire({
+              icon: "error",
+              title: "Error",
+              text: "No tienes ningun pokemon en tu equipo.",
+            });
+          }
+    }
+
+    
+    
+    let teamEnJSON = JSON.stringify(teamPokemon);
+    localStorage.setItem("teamPokemon", teamEnJSON);
+  
+    imprimirTeamPokemon();
+
+    revisaSiHayPokemonEnEquipo();
+  };
+ 
+  const btnLimpiaEquipo = document.getElementById("btnLimpiarTeam");
+  btnLimpiaEquipo.addEventListener("click", limpiarEquipo);
+
+
+  const revisaSiHayPokemonEnEquipo = () => {
+     
+    teamPokemon = JSON.parse(localStorage.getItem("teamPokemon")) || [];
+    const btnLimpiaEquipo = document.getElementById("btnLimpiarTeam");
+    if (teamPokemon.length > 0) {
+        btnLimpiaEquipo.style.display = 'block';
+        btnLimpiaEquipo.parentElement.style.display = 'block';
+    } else {
+        btnLimpiaEquipo.style.display = 'none';
+        btnLimpiaEquipo.parentElement.style.display = 'none';
+    }
+   
+  };
+ 
+
+  revisaSiHayPokemonEnEquipo();

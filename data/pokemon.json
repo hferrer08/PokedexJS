@@ -199,7 +199,7 @@
         "generacion": 1,
         "image": "./images/raticate.png",
         "sprite": "./images/raticateSprite.gif",
-        "typeColor": "#D6D2E7"
+        "typeColor": "#D2B48C"
     },
     {
         "nombre": "spearow",
