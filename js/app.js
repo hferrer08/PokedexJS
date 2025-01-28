@@ -226,6 +226,8 @@ const filtrarPorTipo = () => {
   );
   const contenedorCards = document.getElementById("contenedorCards");
 
+  imprimirPokedex(busquedaPorTipo);
+/*
   busquedaPorTipo.forEach((pokemon) => {
     //Desestructuracion del objeto
     let { image, nombre, tipo, ataque, typeColor, numeroPokedex, generacion } =
@@ -299,7 +301,7 @@ const filtrarPorTipo = () => {
     contenedorCards.append(card);
 
 
-  });
+  }); */
 };
 
 //funcion para la lista dropdown por tipo
@@ -442,7 +444,8 @@ const BusquedaPorInput = () => {
   const busquedaPorNombre = listaPokedex.filter((pokemon) =>
     pokemon.nombre.toLowerCase().includes(pokemonABuscar.toLowerCase())
   );
-
+    imprimirPokedex(busquedaPorNombre);
+  /*
   busquedaPorNombre.forEach((pokemon) => {
     //Desestructuracion del objeto
     let { image, nombre, tipo, ataque, typeColor, numeroPokedex, generacion } =
@@ -490,7 +493,7 @@ const BusquedaPorInput = () => {
     botonEliminarPokemon.addEventListener("click", eliminarPokemonDelTeam);
 
     contenedorCards.append(contenedor);
-  });
+  }); */
 };
 
 const limpiarEquipo = async (e) => {
