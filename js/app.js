@@ -1,3 +1,9 @@
+
+
+
+
+
+
 // Codigo fetch para traer info de pokemon.json
 
 const traerDatos = () => {
@@ -10,10 +16,14 @@ const traerDatos = () => {
       listaPokedex = jsonResponse.data;
       imprimirPokedex(listaPokedex);
       generarOpcionesSelect();
+
     });
 };
 traerDatos();
 
+
+
+  
 
 
 
@@ -605,6 +615,15 @@ document.getElementById('btnEquis').addEventListener('click', function () {
       modalElement.removeAttribute('inert');
   }, 300);  // Ajusta el tiempo de espera si es necesario
 });
+
+
+
+//scroll(progress => console.log(progress));
+
+//setTimeout(() => {
+//  console.log("Esto se ejecuta después de 2 segundos.");
+//}, 2000);
+
 
 
 
