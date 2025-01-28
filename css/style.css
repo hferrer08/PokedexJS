@@ -59,9 +59,12 @@ color: black;
 }
 .spriteGif{
     object-fit: contain !important;
-    background-size: contain; /* Ajusta sin distorsionar */
-  background-repeat: no-repeat;
-  background-position: center;
+    background-size: contain; 
+    background-repeat: no-repeat;
+    background-position: center;
+    max-width: 100%; 
+    max-height: 300px; 
+   
 }  
 .img-limited {
     height: 50% !important;
@@ -77,20 +80,32 @@ color: black;
     width: 100%;
     margin: 15px;
     overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  .custom-card:hover {
+    transform: translateY(-10px); /* Levanta la card un poco */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Agrega una sombra más pronunciada */
+    cursor: pointer; /* Cambia el cursor para indicar que se puede interactuar */
   }
   
   /* Estilos para la imagen de la card */
   .custom-card-image {
     position: relative !important;
     object-fit: cover;
+    transition: transform 0.3s ease;
   }
   
   .custom-card-image img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Ajusta la imagen para cubrir el área sin distorsionar */
+    object-fit: cover; 
+    transition: transform 0.3s ease;
   }
-  
+ 
+  .custom-card:hover .custom-card-image img {
+    transform: scale(1.1); /* Aumenta el tamaño de la imagen al 110% */
+  }
+ 
   /* Título sobre la imagen */
   .custom-card-title {
     position: absolute;
@@ -127,3 +142,17 @@ color: black;
     z-index: 1000; /* Asegura que el botón se quede sobre otros elementos */
 }
  
+#team-count {
+    font-size: 0.8rem;
+    padding: 0.4em 0.6em;
+    z-index: 1;
+  }
+  .scroll-move {
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    position: fixed;
+    top: 100px;
+    transition: top 0.3s ease;
+  }
+  

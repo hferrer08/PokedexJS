@@ -17,7 +17,8 @@
 </head>
 <body class="bg-dark">
     <button class="btn btn-info floating-btn" data-bs-toggle="modal" data-bs-target="#exampleModal">
-        Ver mi team
+        Ver mi team  <span id="team-count" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+            0 </span>
     </button>
     
     
@@ -36,7 +37,9 @@
                            
                             <div id="contenedorSpriteTeam" class="row d-flex justify-content-around m-1">
                                 <!-- Contenedor para ingresar a los pokemon escogidos por el usuario para su team -->
+                            
                             </div>
+                            <div id="divSinTeam" class="text-dark">No tienes pokemon en tu equipo.</div>
                             <div class="row d-flex justify-content-center col-12 mt-2">
                                 <button id="btnLimpiarTeam" type="button" class="btn btn-danger col-6">Eliminar todo el equipo</button>
                             </div>

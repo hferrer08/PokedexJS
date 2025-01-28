@@ -14,6 +14,10 @@ const traerDatos = () => {
 };
 traerDatos();
 
+
+
+
+
 const sweetConfirmacionEliminar = async (titulo) => {
   const result = await Swal.fire({
     title: titulo,
@@ -53,14 +57,14 @@ function generarOpcionesSelect() {
 
 function obtenerGradienteDeFondo(tipo) {
   const gradientesPorTipo = {
-    fuego: "linear-gradient(135deg, #FF7F50, #FF4500)", // Coral a rojo fuego
-    agua: "linear-gradient(135deg, #4682B4, #00BFFF)", // Azul acero a azul claro
-    planta: "linear-gradient(135deg, #3CB371, #2E8B57)", // Verde medio a verde selva
-    bicho: "linear-gradient(135deg, #9ACD32, #6B8E23)", // Verde amarillento a verde oliva
-    volador: "linear-gradient(135deg, #87CEEB, #4682B4)", // Azul cielo a azul acero
-    normal: "linear-gradient(135deg, #D3D3D3, #A9A9A9)", // Gris claro a gris oscuro
-    veneno: "linear-gradient(135deg, #8A2BE2, #4B0082)", // Azul violeta a índigo
-    eléctrico: "linear-gradient(135deg, #FFD700, #FFA500)", // Dorado a naranja
+    fuego: "linear-gradient(135deg, #FF7F50, #dc3545)", // Coral a rojo fuego
+    agua: "linear-gradient(135deg,rgb(85, 117, 224),rgb(85, 26, 222))", // Azul pálido a azul acero
+    planta: "linear-gradient(135deg, #90EE90,rgb(16, 238, 68))", // Verde claro a verde selva
+    bicho: "linear-gradient(135deg, #C0FF3E, #6B8E23)", // Verde lima claro a verde oliva oscuro
+    volador: "linear-gradient(135deg,rgb(255, 255, 255), #4682B4)", // Azul cielo a azul acero
+    normal: "linear-gradient(135deg,rgba(245, 245, 245, 0.75), #808080)", // Gris claro a gris oscuro
+    veneno: "linear-gradient(135deg, #DA70D6, #4B0082)", // Orquídea clara a índigo oscuro
+    eléctrico: "linear-gradient(135deg,rgb(247, 202, 70), #FFD700)", // Amarillo vibrante a dorado
     roca: "linear-gradient(135deg, #B8860B, #8B4513)", // Marrón dorado a marrón oscuro
     tierra: "linear-gradient(135deg, #DEB887, #D2691E)", // Madera a marrón rojizo
     hada: "linear-gradient(135deg, #FFC0CB, #FF69B4)", // Rosa claro a rosa intenso
@@ -75,9 +79,10 @@ function obtenerGradienteDeFondo(tipo) {
 
   return (
     gradientesPorTipo[tipo.toLowerCase()] ||
-    "linear-gradient(135deg, #A9A9A9, #696969)"
-  ); // Gris oscuro por defecto
+    "linear-gradient(135deg, #A9A9A9, #696969)" // Gris oscuro por defecto
+  );
 }
+
 
 function primeraLetraMayuscula(cadena) {
   if (!cadena) return ''; // Verifica si la cadena está vacía
@@ -101,7 +106,7 @@ function imprimirPokedex(listaPokedex) {
 
    // Crear el contenedor principal de la card
   const card = document.createElement('div');
-  card.className='custom-card col-lg-5 col-md-5 col-sm-12 m-1 shadow';
+  card.className='custom-card col-lg-5 col-md-5 col-sm-12 m-2 shadow';
 
   // Crear el contenedor para la imagen de la card
   const cardImage = document.createElement('div');
@@ -133,7 +138,7 @@ function imprimirPokedex(listaPokedex) {
   
     //Agregar boton Pokemon
  let botonPokemon = document.createElement("button");
- botonPokemon.className = "botonPokemon btn btn-dark border  m-1 btn-sm";
+ botonPokemon.className = "botonPokemon btn btn-dark border m-2 btn-sm";
  let botonEliminarPokemon = document.createElement("button");
  botonEliminarPokemon.className =
    "botonEliminarPokemon btn btn-dark border m-1 btn-sm";
@@ -185,6 +190,9 @@ function imprimirPokedex(listaPokedex) {
 
     
   });
+
+  // Llamar a esta función después de generar las cards dinámicamente
+
 }
 
 imprimirPokedex(listaPokedex);
@@ -203,7 +211,7 @@ function imprimirTeamPokemon() {
     let contenedorSprite = document.createElement("div");
     contenedorSprite.className = "col-3 m-1";
     contenedorSprite.innerHTML = ` 
-       <div class="text-center d-flex align-items-center"><img src="${pokemon.sprite}" class="img-fluid text-center spriteGif"></div>
+       <div class="text-center d-flex align-items-center"><img src="${pokemon.sprite}" class="text-center spriteGif"></div>
                
        `;
     //Agregar Pokemon
@@ -535,13 +543,18 @@ btnLimpiaEquipo.addEventListener("click", limpiarEquipo);
 const revisaSiHayPokemonEnEquipo = () => {
   teamPokemon = JSON.parse(localStorage.getItem("teamPokemon")) || [];
   const btnLimpiaEquipo = document.getElementById("btnLimpiarTeam");
+  const divSinTeam = document.getElementById("divSinTeam");
+  const teamCount = document.getElementById('team-count');
   if (teamPokemon.length > 0) {
     btnLimpiaEquipo.style.display = "block";
     btnLimpiaEquipo.parentElement.style.display = "block";
+    divSinTeam.style.display = "none";
   } else {
     btnLimpiaEquipo.style.display = "none";
     btnLimpiaEquipo.parentElement.style.display = "none";
+    divSinTeam.style.display = "block";
   }
+  teamCount.textContent = teamPokemon.length;
 };
 
 revisaSiHayPokemonEnEquipo();
